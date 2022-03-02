@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/dashboard', function () {
-    return view('layout.admin.dashboard');
+Route::get('/admin', function () {
+    return view('layouts.dashboard');
 });
+
+Route::get('data_mahasiswa', [App\Http\Controllers\DataMahasiswaController::class, 'index']);

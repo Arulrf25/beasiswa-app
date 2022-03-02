@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SPK Beasiswa</title>
+  <title>SPK Beasiswa PPA</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -200,10 +200,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <a href="/data_mahasiswa" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
-                Data Siswa
+                Data Mahasiswa
               </p>
             </a>
           </li>
