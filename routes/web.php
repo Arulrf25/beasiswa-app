@@ -16,8 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin', function () {
+Route::get('/data-mahasiswa', function () {
     return view('layouts.dashboard');
 });
 
-Route::get('data_mahasiswa', [App\Http\Controllers\DataMahasiswaController::class, 'index']);
+Route::get('data-mahasiswa', [App\Http\Controllers\DataMahasiswaController::class, 'index'])->name('data-mahasiswa.index');
+Route::post('/data-mahasiswa/create', 'DataMahasiswaController@create')->name('data-mahasiswa.create');
+Route::post('/data-mahasiswa/store', 'DataMahasiswaController@store')->name('data-mahasiswa.store');
+Route::get('/data-mahasiswa/edit/{id?}', 'DataMahasiswaController@edit')->name('data-mahasiswa.edit');
+Route::put('/data-mahasiswa/update/{id?}', 'DataMahasiswaController@update')->name('data-mahasiswa.update');
+Route::delete('/data-mahasiswa/destroy/{id?}', 'DataMahasiswaController@destroy')->name('data-mahasiswa.destroy');

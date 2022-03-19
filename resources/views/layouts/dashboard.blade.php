@@ -243,52 +243,109 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Blank Page</h1>
+        <button type="button" class="btn btn-primary fas fa-plus-square" data-toggle="modal" data-target="#exampleModal">
+          Tambah Data
+        </button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                {{-- Form tambah data mahasiswa  --}}
+                <form action="{{route('data-mahasiswa.store')}}" method="POST">
+                  {{-- CSRF merupakan keamanan yang disediakan laravel  --}}
+                  @method('POST')
+                  @csrf
+                  <div class="mb-3">
+                    <label for="" class="form-label">NIM Mahasiswa</label>
+                    <input required name="nim" type="text" class="form-control" placeholder="Masukkan NIM mahasiswa">
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Nama Mahasiswa</label>
+                    <input required name="nama" type="text" class="form-control" placeholder="Masukkan nama mahasiswa">
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Kelas</label>
+                    <input required name="kelas" type="text" class="form-control" placeholder="Masukkan kelas mahasiswa">
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">IPK</label>
+                    <input required name="ipk" type="text" class="form-control" placeholder="Masukkan IPK mahasiswa">
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Penghasilan Orangtua</label>
+                    <input required name="gaji_ortu" type="text" class="form-control" placeholder="Masukkan penghasilan orangtua">
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Prestasi</label>
+                    <input required name="prestasi" type="text" class="form-control" placeholder="Masukkan prestasi mahasiswa">
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Organisasi</label>
+                    <input required name="organisasi" type="text" class="form-control" placeholder="Masukkan organisasi mahasiswa">
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Jumlah Tanggungan</label>
+                    <input required name="tanggungan" type="text" class="form-control" placeholder="Masukkan jumlah tanggungan">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Simpan</button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Blank Page</li>
-            </ol>
-          </div>
         </div>
-      </div><!-- /.container-fluid -->
-    </section>
+        <!-- Main content -->
+        <section class="content">
+          <table class="table table-striped table-hover" style="vertical-align: middle">
+            <tr>
+              <th>No.</th>
+              <th>NIM</th>
+              <th>Nama Mahasiswa</th>
+              <th>Kelas</th>
+              <th>IPK</th>
+              <th>Penghasilan Orangtua</th>
+              <th>Prestasi</th>
+              <th>Organisasi</th>
+              <th>Jumlah Tanggungan</th>
+              <th>Aksi</th>
+            </tr>
 
-    <!-- Main content -->
-    <section class="content">
-
-      <!-- Default box -->
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Title</h3>
-
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-              <i class="fas fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
-        </div>
-        <div class="card-body">
-          Start creating your amazing application!
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-          Footer
-        </div>
-        <!-- /.card-footer-->
+            @foreach($colleges as $college)
+            <tr>
+                <td>{{ $college->id }}</td>
+                <td>{{ $college->nim }}</td>
+                <td>{{ $college->nama }}</td>
+                <td>{{ $college->kelas }}</td>
+                <td>{{ $college->ipk }}</td>
+                <td>{{ $college->gaji_ortu }}</td>
+                <td>{{ $college->prestasi }}</td>
+                <td>{{ $college->organisasi }}</td>
+                <td>{{ $college->tanggungan }}</td>
+                <td>
+                  <a href="{{route('data-mahasiswa.edit', $college->id)}}" class="btn btn-primary fas fa-edit"></a>
+                  <form action="{{route('data-mahasiswa.destroy', $college->id)}}" method="POST">
+                    @csrf    
+                    @method('delete')
+                    <button class="btn btn-danger fas fa-trash-alt"></button>
+                  </form>
+                </td>
+            </tr>
+            @endforeach
+          </table>
+        </section>
       </div>
-      <!-- /.card -->
-
     </section>
-    <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
+
+  
 
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
