@@ -11,10 +11,11 @@ class DataMahasiswaController extends Controller
 {
     public function index()
     {
-        $data_mahasiswa = DataMahasiswa::get();
-        return view('datamahasiswa.data_mahasiswa', [
-            'colleges' => $data_mahasiswa
-        ]);
+        $colleges = DataMahasiswa::all();
+        // return view('datamahasiswa.data_mahasiswa', [
+        //     'colleges' => $colleges
+        // ]);
+        return view('datamahasiswa.data_mahasiswa', compact('colleges'));
 
     }
 

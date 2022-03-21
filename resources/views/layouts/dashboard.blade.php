@@ -216,6 +216,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route('pembobotan.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                Pembobotan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>

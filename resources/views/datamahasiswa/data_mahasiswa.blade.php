@@ -26,11 +26,11 @@
             <td>{{ $college->organisasi }}</td>
             <td>{{ $college->tanggungan }}</td>
             <td>
-                <a href="{{route('data_mahasiswa.destroy', $college->id)}} " class="btn btn-primary fas fa-edit"></a>
-                <form action="{{route('data_mahasiswa.destroy', $college->id)}}" method="POST">
-                    @crsf
+                <form action="{{route('data-mahasiswa.destroy', $college->id)}}" method="POST">
+                    <a href="{{route('data-mahasiswa.edit', $college->id)}}" class="btn btn-primary fas fa-edit"></a>
+                    @csrf
                     @method('delete')
-                    <button class="btn btn-danger fas fa-trash-alt"></button>
+                    <button type="submit" class="btn btn-danger fas fa-trash-alt"></button>
                 </form>
             </td>
         </tr>
