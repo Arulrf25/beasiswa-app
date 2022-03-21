@@ -275,23 +275,51 @@
                   </div>
                   <div class="mb-3">
                     <label for="" class="form-label">IPK</label>
-                    <input required name="ipk" type="text" class="form-control" placeholder="Masukkan IPK mahasiswa">
+                    <select required name="ipk" class="custom-select">
+                      <option selected>IPK Mahasiswa</option>
+                      <option value="<= 2,75"><= 2,75</option>
+                      <option value="<= 3,00"><= 3,00</option>
+                      <option value="<= 3,25"><= 3,25</option>
+                      <option value="<= 3,50"><= 3,50</option>
+                      <option value="> 3,50">> 3,50</option>
+                    </select>
                   </div>
                   <div class="mb-3">
                     <label for="" class="form-label">Penghasilan Orangtua</label>
-                    <input required name="gaji_ortu" type="text" class="form-control" placeholder="Masukkan penghasilan orangtua">
+                    <select required name="gaji_ortu" class="custom-select">
+                      <option selected>Penghasilan Orangtua</option>
+                      <option value="<= 1.000.000"><= 1.000.000</option>
+                      <option value="<= 5.000.000"><= 5.000.000</option>
+                      <option value="<= 10.000.000"><= 10.000.000</option>
+                      <option value="> 10.000.000">> 10.000.000</option>
+                    </select>
                   </div>
                   <div class="mb-3">
                     <label for="" class="form-label">Prestasi</label>
-                    <input required name="prestasi" type="text" class="form-control" placeholder="Masukkan prestasi mahasiswa">
+                    <select required name="prestasi" class="custom-select">
+                      <option selected>Prestasi</option>
+                      <option value="Ada">Ada</option>
+                      <option value="Tidak Ada">Tidak Ada</option>
+                    </select>
                   </div>
                   <div class="mb-3">
                     <label for="" class="form-label">Organisasi</label>
-                    <input required name="organisasi" type="text" class="form-control" placeholder="Masukkan organisasi mahasiswa">
+                    <select required name="organisasi" class="custom-select">
+                      <option selected>Organisasi</option>
+                      <option value="Aktif">Aktif</option>
+                      <option value="Tidak Aktif">Tidak Aktif</IPK></option>
+                    </select>
                   </div>
                   <div class="mb-3">
                     <label for="" class="form-label">Jumlah Tanggungan</label>
-                    <input required name="tanggungan" type="text" class="form-control" placeholder="Masukkan jumlah tanggungan">
+                    <select required name="tanggungan" class="custom-select">
+                      <option selected>Jumlah Tanggungan</option>
+                      <option value="1 anak">1 anak</option>
+                      <option value="2 anak">2 anak</option>
+                      <option value="3 anak">3 anak</option>
+                      <option value="4 anak">4 anak</option>
+                      <option value=">= 5 anak">>= 5 anak</option>
+                    </select>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
