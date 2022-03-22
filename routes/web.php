@@ -21,13 +21,13 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-// Auth::routes();
+Auth::routes();
 
 Route::get('/',[HomeController::class, 'index']);
 Route::post('custom-login', [HomeController::class, 'customLogin'])->name('login.custom');
-// Route::get('registration', [CustomLoginController::class, 'registration'])->name('register-user');
-// Route::post('custom-registration', [CustomLoginController::class, 'customRegistration'])->name('register.custom');
-// Route::get('signout', [CustomLoginController::class, 'signOut'])->name('signout');
+Route::get('registration', [HomeController::class, 'register'])->name('register.custom');
+Route::post('custom-registration', [HomeController::class, 'customRegistration'])->name('registrasi');
+Route::get('signout', [HomeController::class, 'signOut'])->name('signout');
 
 
 Route::get('/admin', function () {

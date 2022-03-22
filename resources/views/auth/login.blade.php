@@ -14,7 +14,7 @@
 <body>
     <div class="wrapper">
         <div class="logo"> <img
-                src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png" alt="">
+                src="{{ asset('img')}}/polindra.png" alt="">
         </div>
         <div class="text-center mt-4 "> <b>SISTEM PENGAMBILAN KEPUTUSAN </b> </div>
         <div class="text-center "> <b>BEASISWA PPA POLITEKNIK NEGERI INDRAMAYU</b> </div>
@@ -30,11 +30,11 @@
                 <input type="password" name="password" placeholder="Password" required
                     autocomplete="current-password">
             </div>
-            <button type="submit" class="btn btn-primary"></button>
+            <button type="submit" class="btn btn-primary">Login</button>
         </form>
-{{--
+
         <div class="text-center fs-6"> <a href="{{ route('password.request') }}">Forget password?</a> or <a
-                href="{{ route('register') }}">Sign up</a> </div> --}}
+                href="{{ route('register') }}">register</a> </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
