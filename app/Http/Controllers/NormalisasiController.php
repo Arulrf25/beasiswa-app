@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
 use App\Models\DataMahasiswa;
 use App\Models\Crips;
 
-use Illuminate\Http\Request;
-
-class PembobotanController extends Controller
+class NormalisasiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,8 +33,41 @@ class PembobotanController extends Controller
             // return $cari_bobot_ipk[0]['bobot'];
         }
 
+        $ipk        = array();
+        $gaji       = array();
+        $prestasi   = array();
+        $organisasi = array();
+        $tanggungan = array();
+        foreach ($mahasiswa as $key => $value) {
+            array_push($ipk, $value->bobot_ipk);
+            array_push($gaji, $value->bobot_gaji);
+            array_push($prestasi, $value->bobot_prestasi);
+            array_push($organisasi, $value->bobot_organisasi);
+            array_push($tanggungan, $value->bobot_tanggungan);
+        }
 
-        return view('pembobotan.index', compact('mahasiswa'));
+        // Benefit(max) dan cost(min)
+        $max_value_ipk          = max($ipk);
+        $min_value_gaji         = min($gaji);
+        $max_value_prestasi     = max($prestasi);
+        $max_value_organisasi   = max($organisasi);
+        $max_value_tanggungan   = max($tanggungan) ;
+
+        foreach ($mahasiswa as $key => $value) {
+            $normalisasi_ipk        = $value->bobot_ipk/$max_value_ipk;
+            $normalisasi_gaji       = $min_value_gaji/$value->bobot_gaji;
+            $normalisasi_prestasi   = $value->bobot_prestasi/$max_value_prestasi;
+            $normalisasi_organisasi = $value->bobot_organisasi/$max_value_organisasi;
+            $normalisasi_tanggungan = $value->bobot_tanggungan/$max_value_tanggungan;
+
+            $mahasiswa[$key]['normalisasi_ipk']           = $normalisasi_ipk;
+            $mahasiswa[$key]['normalisasi_gaji']          = $normalisasi_gaji;
+            $mahasiswa[$key]['normalisasi_prestasi']      = $normalisasi_prestasi;
+            $mahasiswa[$key]['normalisasi_organisasi']    = $normalisasi_organisasi;
+            $mahasiswa[$key]['normalisasi_tanggungan']    = $normalisasi_tanggungan;
+        }
+
+        return view('normalisasi.index', compact('mahasiswa'));
     }
 
     /**

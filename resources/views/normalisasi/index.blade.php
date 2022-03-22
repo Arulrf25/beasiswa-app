@@ -2,7 +2,7 @@
 @section('value')
 <div class="card">
     <div class="card-header">
-        <h1>Pembobotan</h1>
+        <h1>Normalisasi</h1>
     </div>
     <div class="card-body">
         <div>
@@ -25,16 +25,15 @@
                     <td>{{ $item->nim }}</td>
                     <td>{{ $item->nama }}</td>
                     <td>{{ $item->kelas }}</td>
-                    <td>{{ $item->bobot_ipk }}</td>
-                    <td>{{ $item->bobot_gaji}}</td>
-                    <td>{{ $item->bobot_prestasi }}</td>
-                    <td>{{ $item->bobot_organisasi }}</td>
-                    <td>{{ $item->bobot_tanggungan }}</td>
+                    <td>{{ $item->normalisasi_ipk }}</td>
+                    <td>{{ $item->normalisasi_gaji_ortu }}</td>
+                    <td>{{ $item->normalisasi_prestasi }}</td>
+                    <td>{{ $item->normalisasi_organisasi }}</td>
+                    <td>{{ $item->normalisasi_tanggungan }}</td>
                 </tr>
                 @endforeach
             </table>
         </div>
     </div>
 </div>
-
 @endsection

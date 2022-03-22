@@ -224,7 +224,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{ route('normalisasi.index') }}" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Normalisasi
@@ -232,7 +232,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('perangkingan.index') }}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Solusi

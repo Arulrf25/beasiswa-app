@@ -5,6 +5,10 @@ use App\Http\Controllers\DataMahasiswaController;
 use App\Http\Controllers\KriteriaController;
 use App\Http\Controllers\CripsController;
 use App\Http\Controllers\PembobotanController;
+use App\Http\Controllers\NormalisasiController;
+use App\Http\Controllers\PerangkinganController;
+use App\Http\Controllers\HomeController;
+// use App\Http\Controllers\CustomLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +21,14 @@ use App\Http\Controllers\PembobotanController;
 |
 */
 
-
 // Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/',[HomeController::class, 'index']);
+Route::post('custom-login', [HomeController::class, 'customLogin'])->name('login.custom');
+// Route::get('registration', [CustomLoginController::class, 'registration'])->name('register-user');
+// Route::post('custom-registration', [CustomLoginController::class, 'customRegistration'])->name('register.custom');
+// Route::get('signout', [CustomLoginController::class, 'signOut'])->name('signout');
+
 
 Route::get('/admin', function () {
     return view('layouts.dashboard');
@@ -37,3 +45,5 @@ Route::resource('kriteria', KriteriaController::class);
 Route::resource('crips', CripsController::class);
 Route::get('/create/crips/{id}', [CripsController::class, 'create'])->name('create.crips');
 Route::resource('pembobotan', PembobotanController::class);
+Route::resource('normalisasi', NormalisasiController::class);
+Route::resource('perangkingan', PerangkinganController::class);
