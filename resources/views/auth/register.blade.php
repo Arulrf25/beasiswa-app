@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -42,11 +42,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html> --}}
+</html>
 
 
 
-
+{{--
 @extends('layouts.app')
 
 @section('content')
@@ -123,4 +123,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection --}}

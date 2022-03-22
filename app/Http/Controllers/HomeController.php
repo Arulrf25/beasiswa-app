@@ -33,7 +33,6 @@ class HomeController extends Controller
 
     public function customLogin(Request $request){
 
-        // return $request;
         $request->validate([
             'email' => 'required',
             'password' => 'required',

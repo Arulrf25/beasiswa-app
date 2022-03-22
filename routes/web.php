@@ -8,7 +8,6 @@ use App\Http\Controllers\PembobotanController;
 use App\Http\Controllers\NormalisasiController;
 use App\Http\Controllers\PerangkinganController;
 use App\Http\Controllers\HomeController;
-// use App\Http\Controllers\CustomLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +20,11 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Auth::routes();
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
+Auth::routes();
 Route::get('/',[HomeController::class, 'index']);
 Route::post('custom-login', [HomeController::class, 'customLogin'])->name('login.custom');
 Route::get('registration', [HomeController::class, 'register'])->name('register.custom');

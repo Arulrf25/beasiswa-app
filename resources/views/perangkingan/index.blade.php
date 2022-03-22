@@ -6,7 +6,7 @@
     </div>
     <div class="card-body">
         <div>
-            <table class="table table-striped table-responsive" style="vertical-align: middle">
+            <table class="table table-striped table-responsive" style="vertical-align: middle" id="rank">
                 <thead>
                     <tr class="text-center">
                         <td colspan="">Rank</td>
@@ -61,5 +61,25 @@
         </div>
     </div>
 </div>
+
+{{-- <button class="btn btn-primary" id="export">Export</button> --}}
+
+<script>
+
+    $(document).ready(function() {
+
+        $('.export').click(function(){
+            // $('#rank').table2excel({
+            // exclude: ".excludeThisClass",
+            // name: "Worksheet Name",
+            // filename: "Beasiswa_ppa.xls",
+            // preserveColors: true
+
+            console.log('hallo')
+        });
+
+    })
+
+</script>
 
 @endsection
