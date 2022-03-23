@@ -62,22 +62,20 @@
     </div>
 </div>
 
-{{-- <button class="btn btn-primary" id="export">Export</button> --}}
+{{-- <button class="btn btn-success mb-2" id="export">Export</button> --}}
 
 <script>
 
     $(document).ready(function() {
 
-        $('.export').click(function(){
-            // $('#rank').table2excel({
-            // exclude: ".excludeThisClass",
-            // name: "Worksheet Name",
-            // filename: "Beasiswa_ppa.xls",
-            // preserveColors: true
-
-            console.log('hallo')
+        $('#export').click(function(){
+            $('#rank').table2excel({
+                exclude: ".excludeThisClass",
+                name: "Worksheet Name",
+                filename: "Beasiswa_ppa.xls",
+                preserveColors: false
+            });
         });
-
     })
 
 </script>

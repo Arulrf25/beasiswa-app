@@ -25,7 +25,7 @@ class PembobotanController extends Controller
             $cari_bobot_organisasi  = Crips::where('nama_crips', $value->organisasi)->pluck('bobot');
             $cari_bobot_tanggungan  = Crips::where('nama_crips', $value->tanggungan)->pluck('bobot');
             $mahasiswa[$key]['bobot_ipk']           = $cari_bobot_ipk[0];
-            $mahasiswa[$key]['bobot_gaji']     = $cari_bobot_gaji[0];
+            $mahasiswa[$key]['bobot_gaji']          = $cari_bobot_gaji[0];
             $mahasiswa[$key]['bobot_prestasi']      = $cari_bobot_prestasi[0];
             $mahasiswa[$key]['bobot_organisasi']    = $cari_bobot_organisasi[0];
             $mahasiswa[$key]['bobot_tanggungan']    = $cari_bobot_tanggungan[0];

@@ -28,7 +28,7 @@
                 <tbody>
                     @foreach($colleges as $college)
                     <tr>
-                        <td>{{ $college->id }}</td>
+                        <td> {{ $loop->index+1}} </td>
                         <td>{{ $college->nim }}</td>
                         <td>{{ $college->nama }}</td>
                         <td>{{ $college->kelas }}</td>

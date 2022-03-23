@@ -21,12 +21,12 @@
 
                 @foreach($mahasiswa as $index => $item )
                 <tr>
-                    <td>{{ $item->id }}</td>
+                    <td>{{ $loop->index+1 }}</td>
                     <td>{{ $item->nim }}</td>
                     <td>{{ $item->nama }}</td>
                     <td>{{ $item->kelas }}</td>
                     <td>{{ $item->bobot_ipk }}</td>
-                    <td>{{ $item->bobot_gaji}}</td>
+                    <td>{{ $item->bobot_gaji }}</td>
                     <td>{{ $item->bobot_prestasi }}</td>
                     <td>{{ $item->bobot_organisasi }}</td>
                     <td>{{ $item->bobot_tanggungan }}</td>
