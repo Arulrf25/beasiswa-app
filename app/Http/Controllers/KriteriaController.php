@@ -112,8 +112,9 @@ class KriteriaController extends Controller
         $data = Kriteria::findOrFail($id);
         $data->delete();
 
-        return redirect()->route('kriteria.show', $id)
+        return redirect()->route('kriteria.index')
             ->with('success', 'Project deleted successfully');
 
     }
 }
+    

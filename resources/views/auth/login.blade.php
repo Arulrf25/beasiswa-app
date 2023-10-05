@@ -18,7 +18,7 @@
         <div class="text-center mt-4 "> <b>SISTEM PENGAMBILAN KEPUTUSAN </b> </div>
         <div class="text-center "> <b>BEASISWA PPA POLITEKNIK NEGERI INDRAMAYU</b> </div>
 
-        <form class="p-3 mt-3" method="POST" action="{{ route('login')}}">
+        <form class="p-3 mt-3" method="POST" action="{{ route('login.custom')}}" enctype="multipart/form-data">
             <div class="form-field d-flex align-items-center">
                 @csrf
                 <span class="far fa-user"></span>
@@ -26,13 +26,13 @@
             </div>
             <div class="form-field d-flex align-items-center">
                 <span class="fas fa-key"></span>
-                <input type="password" name="password" placeholder="Password" required autocomplete="current-password">
+                <input type="password" name="password" placeholder="Password" required>
             </div>
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
 
         <div class="text-center fs-6"> <a href="{{ route('password.request') }}">Forget password?</a> or <a
-                href="{{ route('register.custom') }}">register</a> </div>
+                href="{{ route('register') }}">register</a> </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>

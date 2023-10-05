@@ -28,7 +28,7 @@ Auth::routes();
 Route::get('/',[HomeController::class, 'index']);
 Route::post('custom-login', [HomeController::class, 'customLogin'])->name('login.custom');
 Route::get('registration', [HomeController::class, 'register'])->name('register.custom');
-Route::post('custom-registration', [HomeController::class, 'customRegistration'])->name('registrasi');
+Route::post('custom-registration', [HomeController::class, 'customRegistration'])->name('custom_registrasi');
 Route::get('signout', [HomeController::class, 'signOut'])->name('signout');
 
 

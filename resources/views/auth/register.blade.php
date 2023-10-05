@@ -14,9 +14,9 @@
         <div class="logo"> <img
                 src="{{ asset('img')}}/polindra.png" alt="">
         </div>
-        <div class="text-center mt-4 "> <b>Registrasi</b> </div>
+        <div class="text-center mt-4 "> <b>Registrasi SSS</b> </div>
 
-        <form class="p-3 mt-3" method="POST" action="{{ route('registrasi')}}">
+        <form class="p-3 mt-3" method="POST" action="{{ route('custom_registrasi')}}">
             <div class="form-field d-flex align-items-center">
                 @csrf
                 <span class="far fa-user"></span>

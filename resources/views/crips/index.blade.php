@@ -1,8 +1,8 @@
 @extends('layouts.dashboard')
 @section('value')
-<a class="btn btn-success" href="{{ route('create.crips', $kriteria->id) }}" title="Create a project"> <i class="fas fa-plus-circle"></i></a>
-<a class="btn btn-primary" href="{{ route('kriteria.index', ) }}" title="Go back">Kembali</a>
-<table class="table table-striped table-hover" style="vertical-align: middle">
+<a class="btn btn-primary mt-3" href="{{ route('create.crips', $kriteria->id) }}" title="Create a project"> <i class="fas fa-plus-circle"></i> Add</a>
+<a class="btn btn-secondary mt-3" href="{{ route('kriteria.index', ) }}" title="Go back"> <i class="fas fa-backward"></i> Kembali</a>
+<table class="table table-striped table-hover mt-3" style="vertical-align: middle">
   <tr>
       <th>No.</th>
       <th>Nama Crips</th>

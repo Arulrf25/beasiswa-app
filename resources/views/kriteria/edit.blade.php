@@ -45,9 +45,9 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <a class="btn btn-primary" href="{{ route('kriteria.index') }}" title="Go back"> <i
-                    class="fas fa-backward "></i> </a>
+            <button type="submit" class="btn btn-primary"> <i class="fas fa-save"></i> Simpan</button>
+            <a class="btn btn-secondary" href="{{ route('kriteria.index') }}" title="Go back"> <i
+                    class="fas fa-backward "></i> Kembali</a>
         </div>
     </div>
 
