@@ -104,10 +104,7 @@ class CripsController extends Controller
     public function destroy($id)
     {
         $data = Crips::findOrFail($id);
-        // return $data;
         $data->delete();
-
-        return redirect()->route('kriteria.show', $id)
-            ->with('success', 'Project deleted successfully');
+        return back();
     }
 }

@@ -17,6 +17,8 @@ class PembobotanController extends Controller
     {
         $mahasiswa = DataMahasiswa::get();
 
+        return $mahasiswa;
+
         foreach ($mahasiswa as $key => $value) {
 
             $cari_bobot_ipk         = Crips::where('nama_crips', $value->ipk)->pluck('bobot');
@@ -34,7 +36,8 @@ class PembobotanController extends Controller
         }
 
 
-        return view('pembobotan.index', compact('mahasiswa'));
+
+        // return view('pembobotan.index', compact('mahasiswa'));
     }
 
     /**
